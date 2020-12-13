@@ -92,7 +92,7 @@ body .main .buttons button {
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid white;
   font-size: 25px;
   background-color: transparent;

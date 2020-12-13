@@ -41,7 +41,7 @@ btn.addEventListener("click",function(){
     })
     btnReset.addEventListener("click",()=>{
         clearInterval(time);
-        let flag = 1;
+        flag = 1;
         timeMSec = 0;
         timeSec =0;
         timeMin = 0;
