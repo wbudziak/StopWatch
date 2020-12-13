@@ -7,6 +7,7 @@ let minutes = document.querySelector(".minutes");
 let sec = document.querySelector(".sec");
 let mSec =document.querySelector(".mSec");
 let timer = document.querySelector(".timer");
+let flag = 1;
 // minutes.innerText = "00";
 // sec.innerText = "00";
 // timer.innerText = "00";
@@ -14,29 +15,33 @@ let number = 0;
 timeMin = 0;
 timeSec = 0;
 timeMSec =0;
+let time;
 btn.addEventListener("click",function(){
-    btn.innerText = "Start";    
-    const time = setInterval(() => {
-        timeMSec++;
-        if(timeMSec === 100){
-            timeMSec = 0;
-            timeSec++;
-            if(timeSec === 60){
-                timeSec = 0;
-                timeMin++;
+    flag+=1;
+    if(flag === 2){
+         time = setInterval(() => {
+            timeMSec++;
+            if(timeMSec === 100){
+                timeMSec = 0;
+                timeSec++;
+                if(timeSec === 60){
+                    timeSec = 0;
+                    timeMin++;
+                }
             }
-        }
-        timer.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
-        
-    }, 10);    
-   
-
+            timer.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
+            
+        }, 10);    
+    }
+    btn.innerText = "Start";    
     btnStop.addEventListener("click",()=>{
+        flag =1;
         clearInterval(time);
         btn.innerText = "continue";
     })
     btnReset.addEventListener("click",()=>{
         clearInterval(time);
+        let flag = 1;
         timeMSec = 0;
         timeSec =0;
         timeMin = 0;
