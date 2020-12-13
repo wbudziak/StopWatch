@@ -8,15 +8,25 @@ let sec = document.querySelector(".sec");
 let mSec =document.querySelector(".mSec");
 let timer = document.querySelector(".timer");
 let flag = 1;
-// minutes.innerText = "00";
-// sec.innerText = "00";
-// timer.innerText = "00";
-let number = 0;
+
+let number = 1;
 timeMin = 0;
 timeSec = 0;
 timeMSec =0;
 let time;
+let clicked = 0;
+
+const span = document.createElement('span');
+const spanik = document.createElement('span');
+span.style.color = "gray";
+spanik.style.color = "gray";
+const ScoreBox = document.createElement('div');
+scores.appendChild(ScoreBox); 
+ScoreBox.appendChild(span);
+ScoreBox.appendChild(spanik);
 btn.addEventListener("click",function(){
+    
+   
     flag+=1;
     if(flag === 2){
          time = setInterval(() => {
@@ -30,16 +40,24 @@ btn.addEventListener("click",function(){
                 }
             }
             timer.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
-            
+            span.textContent = `Round ${number}`;
+            spanik.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
         }, 10);    
+        
+        
     }
     btn.innerText = "Start";    
     btnStop.addEventListener("click",()=>{
         flag =1;
         clearInterval(time);
         btn.innerText = "continue";
+        
     })
+
+    
     btnReset.addEventListener("click",()=>{
+        spanik.innerHTML = `${("0" + "0").slice(-2)}:${("0" + "0").slice(-2)},${("0" + "0").slice(-2)}`;
+
         clearInterval(time);
         flag = 1;
         timeMSec = 0;
@@ -51,19 +69,17 @@ btn.addEventListener("click",function(){
   
     
 })
+
 btnSave.addEventListener("click",()=>{
+            
     const ScoreBox = document.createElement('div');
-    scores.appendChild(ScoreBox);
-
-    number++;
     const span = document.createElement('span');
-    span.textContent = `Round ${number}`;
-    ScoreBox.appendChild(span);
-
     const spanik = document.createElement('span');
-    spanik.textContent = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
+    scores.appendChild(ScoreBox);
+    ScoreBox.appendChild(span);
     ScoreBox.appendChild(spanik);
-
+    span.textContent = `Round ${number++}`;
+    spanik.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
     setTimeout(() => {
         span.classList.add("spanOn");
         spanik.classList.add("spanOn");
