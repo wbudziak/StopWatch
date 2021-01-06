@@ -188,9 +188,13 @@ body .main .score-box .delete div {
 body .main .score-box .delete div span {
   cursor: pointer;
   font-size: 20px;
-  color: #e65656;
+  color: #beb1b1;
   -webkit-transition: .3s linear all;
   transition: .3s linear all;
+}
+
+body .main .score-box .delete div span:hover {
+  color: #e65656;
 }
 
 body .main .scores::-webkit-scrollbar {

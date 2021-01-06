@@ -28,8 +28,8 @@ const newDivDelete = document.createElement('div');
 const span = document.createElement('span');
 const spanik = document.createElement('span');
 
-span.style.color = "gray";
-spanik.style.color = "gray";
+span.style.color = "rgb(190, 177, 177)";
+spanik.style.color = "rgb(190, 177, 177)";
 
 divDelete.appendChild(newDivDelete);
 divScore.appendChild(newDivScore);

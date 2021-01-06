@@ -148,8 +148,12 @@ body{
             span{
               cursor: pointer;
               font-size: 20px;
-              color: rgb(230, 86, 86);
+              color: rgb(190, 177, 177);
               transition: .3s linear all;
+            }
+            span:hover{
+              color: rgb(230, 86, 86);
+
             }
           }
         }
