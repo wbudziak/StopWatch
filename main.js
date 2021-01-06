@@ -25,7 +25,12 @@ scores.appendChild(ScoreBox);
 ScoreBox.appendChild(span);
 ScoreBox.appendChild(spanik);
 btn.addEventListener("click",function(){
-    
+    btn.classList.add("buttonActive");
+    setTimeout(function(){
+     btn.classList.remove("buttonActive");  
+        }, 100);
+   
+
    
     flag+=1;
     if(flag === 2){
@@ -48,6 +53,7 @@ btn.addEventListener("click",function(){
     }
     btn.innerText = "Start";    
     btnStop.addEventListener("click",()=>{
+        classList.add
         flag =1;
         clearInterval(time);
         btn.innerText = "continue";
@@ -90,4 +96,32 @@ btnSave.addEventListener("click",()=>{
     }, 1250);
 
 
+})
+
+btn.addEventListener("mousedown",()=>{
+    btn.style.transform = "scale(.90)";
+})
+btn.addEventListener("mouseup",()=>{
+    btn.style.transform = "scale(1)";
+})
+
+btnStop.addEventListener("mousedown",()=>{
+    btnStop.style.transform = "scale(.90)";
+})
+btnStop.addEventListener("mouseup",()=>{
+    btnStop.style.transform = "scale(1)";
+})
+
+btnReset.addEventListener("mousedown",()=>{
+    btnReset.style.transform = "scale(.90)";
+})
+btnReset.addEventListener("mouseup",()=>{
+    btnReset.style.transform = "scale(1)";
+})
+
+btnSave.addEventListener("mousedown",()=>{
+    btnSave.style.transform = "scale(.90)";
+})
+btnSave.addEventListener("mouseup",()=>{
+    btnSave.style.transform = "scale(1)";
 })
