@@ -2,7 +2,8 @@ const btn = document.querySelector(".start");
 const btnStop = document.querySelector(".stop");
 const btnReset = document.querySelector(".reset");
 const btnSave = document.querySelector(".save");
-const scores  = document.querySelector(".scores")
+
+
 let minutes = document.querySelector(".minutes");
 let sec = document.querySelector(".sec");
 let mSec =document.querySelector(".mSec");
@@ -16,19 +17,27 @@ timeMSec =0;
 let time;
 let clicked = 0;
 
+
+
+const divScore = document.querySelector('.score');
+const divDelete = document.querySelector('.delete');
+
+const newDivScore = document.createElement('div');
+const newDivDelete = document.createElement('div');
+
 const span = document.createElement('span');
 const spanik = document.createElement('span');
+
 span.style.color = "gray";
 spanik.style.color = "gray";
-const ScoreBox = document.createElement('div');
-scores.appendChild(ScoreBox); 
-ScoreBox.appendChild(span);
-ScoreBox.appendChild(spanik);
+
+divDelete.appendChild(newDivDelete);
+divScore.appendChild(newDivScore);
+newDivScore.appendChild(span);
+newDivScore.appendChild(spanik);
+
+
 btn.addEventListener("click",function(){
-
-   
-
-   
     flag+=1;
     if(flag === 2){
          time = setInterval(() => {
@@ -74,14 +83,30 @@ btn.addEventListener("click",function(){
 
 btnSave.addEventListener("click",()=>{
             
-    const ScoreBox = document.createElement('div');
+    const newDivScore = document.createElement('div');
+    const newDivDelete = document.createElement('div');
+
     const span = document.createElement('span');
     const spanik = document.createElement('span');
-    scores.appendChild(ScoreBox);
-    ScoreBox.appendChild(span);
-    ScoreBox.appendChild(spanik);
+    const delSpan = document.createElement('span');
+    delSpan.textContent = "X";
+    newDivDelete.appendChild(delSpan);
+    
+    divDelete.appendChild(newDivDelete);
+    divScore.appendChild(newDivScore);
+    newDivScore.appendChild(span);
+    newDivScore.appendChild(spanik);
+
     span.textContent = `Round ${number++}`;
     spanik.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
+
+    delSpan.addEventListener("click",function(){
+        delSpan.style.transform = "rotate(360deg)";
+        setTimeout(function(){
+             divDelete.removeChild(newDivDelete);
+             divScore.removeChild(newDivScore);
+            }, 300);
+    })
     setTimeout(() => {
         span.classList.add("spanOn");
         spanik.classList.add("spanOn");
@@ -90,11 +115,7 @@ btnSave.addEventListener("click",()=>{
         span.classList.remove("spanOn");
         spanik.classList.remove("spanOn");
     }, 1250);
-
-
 })
-
-
 btn.addEventListener("click", function(){
     btn.classList.add("buttonActive");
     setTimeout(function(){ 
@@ -119,11 +140,6 @@ btnSave.addEventListener("click", function(){
     btnSave.classList.remove("buttonActive");
 }, 100);
 })
-
-
-
-
-
 
 
 btn.addEventListener("mousedown",()=>{
