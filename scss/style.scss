@@ -153,7 +153,9 @@ body{
             }
             span:hover{
               color: rgb(230, 86, 86);
-
+              @media(max-width:414px){
+                color: rgb(190, 177, 177);
+              }
             }
           }
         }

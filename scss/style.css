@@ -197,6 +197,12 @@ body .main .score-box .delete div span:hover {
   color: #e65656;
 }
 
+@media (max-width: 414px) {
+  body .main .score-box .delete div span:hover {
+    color: #beb1b1;
+  }
+}
+
 body .main .scores::-webkit-scrollbar {
   width: 5px;
   background-color: darkgrey;

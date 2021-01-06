@@ -102,6 +102,7 @@ btnSave.addEventListener("click",()=>{
 
     delSpan.addEventListener("click",function(){
         delSpan.style.transform = "rotate(360deg)";
+        delSpan.style.color = "rgb(230, 86, 86)";
         setTimeout(function(){
              divDelete.removeChild(newDivDelete);
              divScore.removeChild(newDivScore);
