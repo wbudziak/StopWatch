@@ -109,10 +109,6 @@ body .main .buttons button {
   }
 }
 
-body .main .buttons button:hover {
-  width: 145px;
-}
-
 body .main .scores {
   position: absolute;
   overflow-y: auto;

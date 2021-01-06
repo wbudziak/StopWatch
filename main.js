@@ -53,7 +53,6 @@ btn.addEventListener("click",function(){
     }
     btn.innerText = "Start";    
     btnStop.addEventListener("click",()=>{
-        classList.add
         flag =1;
         clearInterval(time);
         btn.innerText = "continue";
@@ -106,21 +105,21 @@ btn.addEventListener("mouseup",()=>{
 })
 
 btnStop.addEventListener("mousedown",()=>{
-    btnStop.style.transform = "scale(.90)";
+    btnStop.style.transform = "scale(.95)";
 })
 btnStop.addEventListener("mouseup",()=>{
     btnStop.style.transform = "scale(1)";
 })
 
 btnReset.addEventListener("mousedown",()=>{
-    btnReset.style.transform = "scale(.90)";
+    btnReset.style.transform = "scale(.95)";
 })
 btnReset.addEventListener("mouseup",()=>{
     btnReset.style.transform = "scale(1)";
 })
 
 btnSave.addEventListener("mousedown",()=>{
-    btnSave.style.transform = "scale(.90)";
+    btnSave.style.transform = "scale(.95)";
 })
 btnSave.addEventListener("mouseup",()=>{
     btnSave.style.transform = "scale(1)";
