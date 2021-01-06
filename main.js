@@ -25,10 +25,7 @@ scores.appendChild(ScoreBox);
 ScoreBox.appendChild(span);
 ScoreBox.appendChild(spanik);
 btn.addEventListener("click",function(){
-    btn.classList.add("buttonActive");
-    setTimeout(function(){
-     btn.classList.remove("buttonActive");  
-        }, 100);
+
    
 
    
@@ -97,6 +94,38 @@ btnSave.addEventListener("click",()=>{
 
 })
 
+
+btn.addEventListener("click", function(){
+    btn.classList.add("buttonActive");
+    setTimeout(function(){ 
+    btn.classList.remove("buttonActive");
+}, 100);
+})
+btnStop.addEventListener("click", function(){
+    btnStop.classList.add("buttonActive");
+    setTimeout(function(){ 
+    btnStop.classList.remove("buttonActive");
+}, 100);
+})
+btnReset.addEventListener("click", function(){
+    btnReset.classList.add("buttonActive");
+    setTimeout(function(){ 
+    btnReset.classList.remove("buttonActive");
+}, 100);
+})
+btnSave.addEventListener("click", function(){
+    btnSave.classList.add("buttonActive");
+    setTimeout(function(){ 
+    btnSave.classList.remove("buttonActive");
+}, 100);
+})
+
+
+
+
+
+
+
 btn.addEventListener("mousedown",()=>{
     btn.style.transform = "scale(.95)";
 })
@@ -124,3 +153,4 @@ btnSave.addEventListener("mousedown",()=>{
 btnSave.addEventListener("mouseup",()=>{
     btnSave.style.transform = "scale(1)";
 })
+

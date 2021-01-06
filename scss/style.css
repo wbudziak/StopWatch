@@ -109,6 +109,12 @@ body .main .buttons button {
   }
 }
 
+@media (max-width: 414px) {
+  body .main .buttons button.buttonActive {
+    width: 145px;
+  }
+}
+
 body .main .scores {
   position: absolute;
   overflow-y: auto;

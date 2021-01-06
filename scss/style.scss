@@ -79,10 +79,14 @@ body{
                 width: 80%
             }
             
+            
           }
-          // button.buttonActive{
-          //   transform: scale(.95);
-          // }
+          button.buttonActive{
+            @media(max-width:414px){
+              width: 145px;
+          }
+          }
+         
           // button::after{
           //     content: "";
           //     position: absolute;
@@ -97,11 +101,11 @@ body{
           // button:hover::after{
           //     bottom: 0;
           // }
-          button:hover{
-              // color: black;
-              // transform: scale(.97);
-              // width: 145px;
-          }
+          // button:hover{
+          //     // color: black;
+          //     // transform: scale(.97);
+          //     // width: 145px;
+          // }
        
       }
       .scores{
