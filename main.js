@@ -103,6 +103,10 @@ btnSave.addEventListener("click",()=>{
     delSpan.addEventListener("click",function(){
         delSpan.style.transform = "rotate(360deg)";
         delSpan.style.color = "rgb(230, 86, 86)";
+        setTimeout(() => {
+            span.classList.add("spanOnDel");
+            spanik.classList.add("spanOnDel");
+        }, 200);
         setTimeout(function(){
              divDelete.removeChild(newDivDelete);
              divScore.removeChild(newDivScore);

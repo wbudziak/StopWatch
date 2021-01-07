@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: black;
+  background-color: #161313;
   width: 100%;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
@@ -166,6 +166,10 @@ body .main .score-box .score div span {
 
 body .main .score-box .score div .spanOn {
   color: #82f173;
+}
+
+body .main .score-box .score div .spanOnDel {
+  text-decoration: line-through;
 }
 
 body .main .score-box .delete {
