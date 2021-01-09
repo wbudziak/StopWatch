@@ -1,8 +1,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: black;
   width: 100%;
+  background-color: black;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
@@ -207,18 +207,12 @@ body .main .score-box .delete div span:hover {
   }
 }
 
-body .main .scores::-webkit-scrollbar {
-  width: 5px;
-  background-color: darkgrey;
+body .main .score-box::-webkit-scrollbar {
+  width: 1px;
+  background-color: black;
 }
 
-body .main .scores::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body .main .scores::-webkit-scrollbar-thumb {
+body .main .score-box::-webkit-scrollbar-thumb {
   background-color: white;
-  outline: 1px solid rgba(162, 167, 172, 0.753);
 }
 /*# sourceMappingURL=style.css.map */

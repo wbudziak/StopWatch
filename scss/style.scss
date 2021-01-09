@@ -1,8 +1,8 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: rgb(22, 19, 19);
     width: 100%;
+    background-color:black;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -166,17 +166,13 @@ body{
           }
         }
     }
-    .scores::-webkit-scrollbar{
-        width: 5px;
-        background-color: darkgrey;
+    .score-box::-webkit-scrollbar{
+      width: 1px;
+      background-color:black;
+  }
+    .score-box::-webkit-scrollbar-thumb {
+      background-color: white;
     }
-    .scores::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      }
-      .scores::-webkit-scrollbar-thumb {
-        background-color: white;
-        outline: 1px solid rgba(162, 167, 172, 0.753);
-      }
     }
    
    
