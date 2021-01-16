@@ -9,7 +9,7 @@ let sec = document.querySelector(".sec");
 let mSec =document.querySelector(".mSec");
 let timer = document.querySelector(".timer");
 let flag = 1;
-
+let buttonFlag = false;
 let number = 1;
 timeMin = 0;
 timeSec = 0;
@@ -38,49 +38,42 @@ newDivScore.appendChild(spanik);
 
 
 btn.addEventListener("click",function(){
-    flag+=1;
-    if(flag === 2){
-         time = setInterval(() => {
-            timeMSec++;
-            if(timeMSec === 100){
-                timeMSec = 0;
-                timeSec++;
-                if(timeSec === 60){
-                    timeSec = 0;
-                    timeMin++;
+    if(!buttonFlag){
+        buttonFlag = !buttonFlag;
+        flag+=1;
+        if(flag === 2){
+             time = setInterval(() => {
+                timeMSec++;
+                if(timeMSec === 100){
+                    timeMSec = 0;
+                    timeSec++;
+                    if(timeSec === 60){
+                        timeSec = 0;
+                        timeMin++;
+                    }
                 }
-            }
-            timer.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
-            span.textContent = `Round ${number}`;
-            spanik.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
-        }, 10);    
-        
-        
-    }
-    btn.innerText = "Start";    
-    btnStop.addEventListener("click",()=>{
+                timer.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
+                span.textContent = `Round ${number}`;
+                spanik.innerText = `${("0" + timeMin).slice(-2)}:${("0" + timeSec).slice(-2)},${("0" + timeMSec).slice(-2)}`;
+            }, 10);       
+        }
+        btn.innerText = "Stop";    
+    }else{
+        buttonFlag = !buttonFlag;
+        btn.textContent = "Start";
         flag =1;
         clearInterval(time);
-        btn.innerText = "continue";
-        
-    })
-
-    
+    }
     btnReset.addEventListener("click",()=>{
         spanik.innerHTML = `${("0" + "0").slice(-2)}:${("0" + "0").slice(-2)},${("0" + "0").slice(-2)}`;
-
         clearInterval(time);
         flag = 1;
         timeMSec = 0;
         timeSec =0;
         timeMin = 0;
         timer.innerText = `00:00,00`;
-        time.stop();
     })
-  
-    
 })
-
 btnSave.addEventListener("click",()=>{
             
     const newDivScore = document.createElement('div');
@@ -121,16 +114,13 @@ btnSave.addEventListener("click",()=>{
         spanik.classList.remove("spanOn");
     }, 1250);
 })
+
+
+
 btn.addEventListener("click", function(){
     btn.classList.add("buttonActive");
     setTimeout(function(){ 
     btn.classList.remove("buttonActive");
-}, 100);
-})
-btnStop.addEventListener("click", function(){
-    btnStop.classList.add("buttonActive");
-    setTimeout(function(){ 
-    btnStop.classList.remove("buttonActive");
 }, 100);
 })
 btnReset.addEventListener("click", function(){
@@ -145,29 +135,18 @@ btnSave.addEventListener("click", function(){
     btnSave.classList.remove("buttonActive");
 }, 100);
 })
-
-
 btn.addEventListener("mousedown",()=>{
     btn.style.transform = "scale(.95)";
 })
 btn.addEventListener("mouseup",()=>{
     btn.style.transform = "scale(1)";
 })
-
-btnStop.addEventListener("mousedown",()=>{
-    btnStop.style.transform = "scale(.95)";
-})
-btnStop.addEventListener("mouseup",()=>{
-    btnStop.style.transform = "scale(1)";
-})
-
 btnReset.addEventListener("mousedown",()=>{
     btnReset.style.transform = "scale(.95)";
 })
 btnReset.addEventListener("mouseup",()=>{
     btnReset.style.transform = "scale(1)";
 })
-
 btnSave.addEventListener("mousedown",()=>{
     btnSave.style.transform = "scale(.95)";
 })
