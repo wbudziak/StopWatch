@@ -59,10 +59,10 @@ body .main .buttons {
 
 @media (max-width: 414px) {
   body .main .buttons {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    height: 130px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 200px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -75,7 +75,7 @@ body .main .buttons .buttonContainer {
 
 @media (max-width: 414px) {
   body .main .buttons .buttonContainer {
-    width: 50%;
+    width: 70%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -88,24 +88,23 @@ body .main .buttons .buttonContainer {
 body .main .buttons button {
   position: relative;
   height: 50px;
-  width: 150px;
+  width: 200px;
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid white;
   font-size: 25px;
   background-color: transparent;
   color: white;
-  -webkit-transition: .2s linear all;
-  transition: .2s linear all;
   overflow: hidden;
 }
 
 @media (max-width: 414px) {
   body .main .buttons button {
     font-size: 20px;
-    width: 80%;
+    width: 100%;
+    border-radius: 10px;
   }
 }
 
@@ -136,7 +135,7 @@ body .main .score-box {
 
 @media (max-width: 414px) {
   body .main .score-box {
-    max-height: 500px;
+    max-height: 350px;
   }
 }
 
